@@ -101,13 +101,6 @@ def find_most_common_words(file_or_string, n):
     most_common_words = word_counts.most_common(n)
     return most_common_words
 
-
-
-'''6. Use the function, find_most_frequent_words to find:
-   a) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
-   b) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
-   c) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
-   d) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)'''
 # 7. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and 
    # it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
 import numpy as np
@@ -171,7 +164,7 @@ def main():
 
     print("The similarity between Michelle's and Melina's speeches is: ", similarity)
 
-8. Find the 10 most repeated words in the romeo_and_juliet.txt
+# 8. Find the 10 most repeated words in the romeo_and_juliet.txt
 import re
 from collections import Counter
 
