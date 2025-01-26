@@ -42,6 +42,30 @@ def melina():
 # 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
 import json
 
+py = [
+{
+        "name": "Afghanistan",
+        "capital": "Kabul",
+        "languages": [
+            "Pashto",
+            "Uzbek",
+            "Turkmen"
+        ],
+        "population": 27657145,
+        "flag": "https://restcountries.eu/data/afg.svg",
+        "currency": "Afghan afghani"
+    },
+    {
+        "name": "Andorra",
+        "capital": "Andorra la Vella",
+        "languages": [
+            "Catalan"
+        ],
+        "population": 78014,
+        "flag": "https://restcountries.eu/data/and.svg",
+        "currency": "Euro"
+    }]
+
 def most_spoken_languages(file, n):
     with open(file, 'r') as f:
         data = json.load(f)
@@ -57,9 +81,9 @@ def most_spoken_languages(file, n):
     most_spoken = sorted(languages.items(), key=lambda x: x[1], reverse=True)[:n]
     return most_spoken
 
-# 3. Read the countries_data.json data file in data directory, create a function that creates a list of the ten most populated countries
+3. Read the countries_data.json data file in data directory, create a function that creates a list of the ten most populated countries
 
-import json
+  import json
 
 def most_populated_countries(filename, n):
     with open(filename, 'r') as file:
@@ -172,87 +196,13 @@ def main():
     print("The similarity between Michelle's and Melina's speeches is: ", similarity)
 
 8. Find the 10 most repeated words in the romeo_and_juliet.txt
-import re
-from collections import Counter
 
-def find_most_repeated_words(filename, n):
-    with open(filename, 'r') as f:
-        text = f.read()
-
-    # Convert the text to lowercase
-    text = text.lower()
-
-    # Remove punctuation
-    text = re.sub(r'[^\w\s]', '', text)
-
-    # Split the text into words
-    words = text.split()
-
-    # Count the frequency of each word
-    word_counts = Counter(words)
-
-    # Find the n most common words
-    most_common_words = word_counts.most_common(n)
-
-    return most_common_words
-
-filename = r'C:\Users\hp\Desktop\Arewa_DS_Training\30-Days-of-Python\data\romeo_and_juliet.txt'
-n = 10
-
-most_repeated_words = find_most_repeated_words(filename, n)
-
-print("The 10 most repeated words in the romeo_and_juliet.txt are:")
-for word, count in most_repeated_words:
-    print(f"{word}: {count}")
-
-''' 9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
+9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
    a) Count the number of lines containing python or Python
    b) Count the number lines containing JavaScript, javascript or Javascript
    c) Count the number lines containing Java and not JavaScript.'''
 
-import pandas as pd
 
-def count_lines(filename, words):
-    df = pd.read_csv(filename)
-    count = 0
-    for index, row in df.iterrows():
-        for column in row:
-            if isinstance(column, str):
-                for word in words:
-                    if word.lower() in column.lower():
-                        count += 1
-                        break
-    return count
-
-def count_lines_with_not(filename, word1, word2):
-    df = pd.read_csv(filename)
-    count = 0
-    for index, row in df.iterrows():
-        found_word1 = False
-        found_word2 = False
-        for column in row:
-            if isinstance(column, str):
-                if word1.lower() in column.lower():
-                    found_word1 = True
-                if word2.lower() in column.lower():
-                    found_word2 = True
-        if found_word1 and not found_word2:
-            count += 1
-    return count
-
-filename = r'C:\Users\hp\Desktop\Arewa_DS_Training\30-Days-of-Python\data\hacker_news.csv'
-
-
-python_count = count_lines(filename, ['python', 'Python'])
-print(f"Number of lines containing python or Python: {python_count}")
-
-
-javascript_count = count_lines(filename, ['JavaScript', 'javascript', 'Javascript'])
-print(f"Number of lines containing JavaScript, javascript or Javascript: {javascript_count}")
-
-
-java_count = count_lines_with_not(filename, 'Java', 'JavaScript')
-print(f"Number of lines containing Java and not JavaScript: {java_count}")
 
 
 
