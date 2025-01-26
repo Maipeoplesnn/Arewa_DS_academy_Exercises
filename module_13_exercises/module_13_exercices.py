@@ -101,6 +101,13 @@ def find_most_common_words(file_or_string, n):
     most_common_words = word_counts.most_common(n)
     return most_common_words
 
+
+
+'''6. Use the function, find_most_frequent_words to find:
+   a) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
+   b) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
+   c) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
+   d) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)'''
 # 7. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and 
    # it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
 import numpy as np
@@ -246,46 +253,3 @@ print(f"Number of lines containing JavaScript, javascript or Javascript: {javasc
 
 java_count = count_lines_with_not(filename, 'Java', 'JavaScript')
 print(f"Number of lines containing Java and not JavaScript: {java_count}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-MODULE 13 OF 30 Days of python programming
-💻 Exercises - Module 13 Python Datetime Exercises
-Get the current day, month, year, hour, minute and timestamp from datetime module
-from datetime import datetime
-now =datetime.now()
-print(now)
-2025-01-21 23:03:54.941212
-Format the current date using this format: "%m/%d/%Y, %H:%M:%S")
-now = datetime.now()
-format_now = now.strftime("%m/%d/%Y, %H:%M:%S")
-print(format_now)
-01/21/2025, 23:07:09
-Today is 5 December, 2019. Change this time string to time.
-time_string = "5 December, 2019"
-time_object = datetime.strptime(time_string, "%d %B, %Y")
-
-print(time_object)
-2019-12-05 00:00:00
-Calculate the time difference between now and new year.
-now = datetime.now()
-new_year = datetime(year=now.year + 1, month=1, day=1)
-time_difference = new_year - now
-print(f"Time difference until New Year: {time_difference}")
-Time difference until New Year: 344 days, 0:41:44.635557
-Calculate the time difference between 1 January 1970 and now.
-epoch_start = datetime(1970, 1, 1)
-now = datetime.now()
-time_difference = now - epoch_start
-print(f"Time difference between 1 January 1970 and now: {time_difference}")
-Time difference between 1 January 1970 and now: 20109 days, 23:23:59.985296''''
